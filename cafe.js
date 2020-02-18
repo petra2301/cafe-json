@@ -18,6 +18,8 @@ function loadJSON(link) {
 function displayProducts(products) {
     const clone = template.cloneNode("true");  
     clone.querySelector(".productImg").style.background = `url(img/${products.gsx$img.$t})`;
+    clone.querySelector(".productImg").style.backgroundSize = "cover";
+    clone.querySelector(".productImg").style.backgroundPosition = "center center";
     clone.querySelector("h3").textContent = products.gsx$name.$t;
     clone.querySelector("h4").textContent = products.gsx$price.$t + " DKK";
     clone.querySelector(".shortDesc").textContent = products.gsx$shortdesc.$t;
@@ -26,6 +28,8 @@ function displayProducts(products) {
         modalWrapper.classList.remove("hide");
         const modal = document.querySelector(".modal");       
         modal.querySelector(".productImgLarge").style.background = `url(img/${products.gsx$img.$t})`;
+        modal.querySelector(".productImgLarge").style.backgroundSize = "cover";
+        modal.querySelector(".productImgLarge").style.backgroundPosition = "center center";
         modal.querySelector("h3").textContent = products.gsx$name.$t;
         modal.querySelector("h4").textContent = products.gsx$price.$t + " DKK";
         modal.querySelector(".longDesc").textContent = products.gsx$longdesc.$t;

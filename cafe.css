@@ -8,7 +8,7 @@
 
 .top {
     padding: 50px;
-    height: 700px;
+    height: 50vh;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -96,14 +96,9 @@ button:hover {
     background-color: #225454;
 }
 
-
-
 .productImg {
     height: 300px;
     width: 100%;
-    grid-rows: 1 / span 4;
-    background-size: cover;
-    background-position: 50% 50%;
 }
 
 .product {
@@ -142,12 +137,6 @@ button:hover {
     grid-template-columns: 1fr 2fr;
     position: relative;
     overflow: hidden;
-}
-
-.productImgLarge {
-    grid-rows: 1 / span 4;
-    background-size: cover;
-    background-repeat: no-repeat;
 }
 
 .modal > .product {
@@ -197,5 +186,47 @@ button:hover {
 @media all and (max-width: 900px) {
     main {
         grid-template-columns: 1fr;
+    }
+
+}
+
+@media all and (max-width: 600px) {
+    main {
+        padding: 20px;
+    }
+    
+    #closeModal {
+        z-index: 99;
+    }
+
+    .productImgLarge {
+        display: none;
+    }
+    
+    .modal {
+        display: flex;
+        flex-direction: column;
+        margin: auto 10px;
+        max-height: 90%;
+        overflow: auto;
+    }
+
+    #plantBased {
+        position: relative;
+    }
+}
+
+@media all and (max-width: 450px) {
+    article {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .productImg {
+        height: 250px;
+    }
+
+    .product > * {
+        margin: 10px 0;
     }
 }
