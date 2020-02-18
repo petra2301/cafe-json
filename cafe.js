@@ -16,20 +16,15 @@ function loadJSON(link) {
 }
 
 function displayProducts(products) {
-
-    const clone = template.cloneNode("true");
-    
+    const clone = template.cloneNode("true");  
     clone.querySelector(".productImg").style.background = `url(img/${products.gsx$img.$t})`;
-    //clone.querySelector(".productImg").style.background = `url(img/coffee-placeholder.jpg)`;
     clone.querySelector("h3").textContent = products.gsx$name.$t;
     clone.querySelector("h4").textContent = products.gsx$price.$t + " DKK";
     clone.querySelector(".shortDesc").textContent = products.gsx$shortdesc.$t;
 
     clone.querySelector("button").addEventListener("click", () => {
         modalWrapper.classList.remove("hide");
-        
-        const modal = document.querySelector(".modal");
-        
+        const modal = document.querySelector(".modal");       
         modal.querySelector(".productImgLarge").style.background = `url(img/${products.gsx$img.$t})`;
         modal.querySelector("h3").textContent = products.gsx$name.$t;
         modal.querySelector("h4").textContent = products.gsx$price.$t + " DKK";
@@ -38,11 +33,8 @@ function displayProducts(products) {
         if (products.gsx$plantbased.$t === "yes") {
             modal.querySelector("#plantBased").classList.remove("hide");
         }
-
-        console.log(`${products.gsx$longdesc.$t}`);
     })
     main.appendChild(clone);
 }
-
 
 loadJSON(productListLink);
