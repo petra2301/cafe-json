@@ -8,7 +8,10 @@ function loadJSON(link) {
 
 function displayProductData(data) {
     const clone = template.cloneNode("true");
+    clone.querySelector(".productImg").style.backgroundImage = "url(img/coffee-placeholder.jpg)";
     clone.querySelector("h3").textContent = data.gsx$name.$t;
+    clone.querySelector("h4").textContent = data.gsx$price.$t;
+    clone.querySelector(".shortDesc").textContent = data.gsx$shortdesc.$t;
     main.appendChild(clone);
 }
 
