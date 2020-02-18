@@ -20,6 +20,8 @@ article {
     height: 300px;
     width: 100%;
     grid-rows: 1 / span 4;
+    background-size: cover;
+    background-position: 50% 50%;
 }
 
 .product {
@@ -28,4 +30,55 @@ article {
     flex-direction: column;
     align-content: center;
     justify-content: space-between;
+}
+
+.modalBg {
+    background: #000000a1;
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    z-index: 98;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#closeModal {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    cursor: pointer;
+}
+
+.modal {
+    height: 600px;
+    width: 900px;
+    background: white;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+}
+
+.productImgLarge {
+    grid-rows: 1 / span 4;
+}
+
+.modal > .product {
+    display: unset;
+} 
+
+.plantBased {
+    display: flex!important;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.plantBased > img {
+    margin-right: 10px;
+}
+
+.hide {
+    display: none;
 }
