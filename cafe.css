@@ -146,8 +146,8 @@ button:hover {
     margin: 50px 0;
 }
 
-.plantBased {
-    display: flex!important;
+#plantBased {
+    display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: flex-start;
@@ -158,16 +158,16 @@ button:hover {
     width: 100%;
 }
 
-.plantBased > p {
+#plantBased > p {
     font-weight: 700;
 }
 
-.plantBased > img {
+#plantBased > img {
     margin-right: 10px;
 }
 
 .hide {
-    display: none;
+    display: none!important;
 }
 
 @media all and (max-width: 1400px) {

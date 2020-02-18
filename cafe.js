@@ -7,6 +7,8 @@ const closeModal = document.querySelector("#closeModal");
 
 closeModal.addEventListener("click", () => {
     modalWrapper.classList.add("hide");
+    const modal = document.querySelector(".modal");
+    modal.querySelector("#plantBased").classList.add("hide");
 });
 
 function loadJSON(link) {
@@ -34,7 +36,7 @@ function displayProducts(products) {
         modal.querySelector(".longDesc").textContent = products.gsx$longdesc.$t;
 
         if (products.gsx$plantbased.$t === "yes") {
-            modal.querySelector(".plantBased").style.display = "block";
+            modal.querySelector("#plantBased").classList.remove("hide");
         }
 
         console.log(`${products.gsx$longdesc.$t}`);
