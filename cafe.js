@@ -16,11 +16,11 @@ function loadJSON(link) {
 function displayProducts(products) {
 
     const clone = template.cloneNode("true");
-    //clone.querySelector(".productImg").style.background = `url(img/${data.gsx$img.$t})`;
-
-    clone.querySelector(".productImg").style.background = `url(img/coffee-placeholder.jpg)`;
+    
+    clone.querySelector(".productImg").style.background = `url(img/${products.gsx$img.$t})`;
+    //clone.querySelector(".productImg").style.background = `url(img/coffee-placeholder.jpg)`;
     clone.querySelector("h3").textContent = products.gsx$name.$t;
-    clone.querySelector("h4").textContent = products.gsx$price.$t;
+    clone.querySelector("h4").textContent = products.gsx$price.$t + " DKK";
     clone.querySelector(".shortDesc").textContent = products.gsx$shortdesc.$t;
 
     clone.querySelector("button").addEventListener("click", () => {
@@ -28,9 +28,9 @@ function displayProducts(products) {
         
         const modal = document.querySelector(".modal");
         
-        modal.querySelector(".productImgLarge").style.background = `url(img/coffee-placeholder.jpg)`;
+        modal.querySelector(".productImgLarge").style.background = `url(img/${products.gsx$img.$t})`;
         modal.querySelector("h3").textContent = products.gsx$name.$t;
-        modal.querySelector("h4").textContent = products.gsx$price.$t;
+        modal.querySelector("h4").textContent = products.gsx$price.$t + " DKK";
         modal.querySelector(".longDesc").textContent = products.gsx$longdesc.$t;
 
         if (products.gsx$plantbased.$t === "yes") {

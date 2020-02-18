@@ -1,20 +1,84 @@
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display|Roboto:300,400,500,700,900&display=swap');
+
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
+.top {
+    height: 700px;
+    width: 100%;
+}
+
+body {
+    background-color: #1b4342;
+    background-image: url("img/bg.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: top center;
+}
+
 main {
+    padding: 50px;
+    max-width: 1600px;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 2em;
+    margin: 50px auto;
 }
 
 article {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    border-top: 10px solid green;
+    border-top: 10px solid #c4a064;
+    background: #efefef;
+    box-shadow: 5px 5px 10px #102726;
 }
+
+h3, h4, p {
+    font-family: "Roboto", sans-serif; 
+}
+
+h3 {
+    font-weight: 900;
+    font-size: 2em;
+}
+
+h3::before {
+    content: "";
+    display: flex;
+    flex-direction: column;
+    border: 2px solid black;
+    width: 20px;
+}
+
+h4 {
+    font-weight: 600;
+    font-size: 1.5em;
+}
+
+p {
+    font-weight: 300;
+}
+
+button {
+    -webkit-appearance: unset;
+    border: none;
+    outline: none;
+    background-color: #143c3c;
+    border-radius: 7px;
+    color: white;
+    padding: 10px 0;
+    cursor: pointer;
+    transition: .3s ease-in-out;
+}
+
+button:hover {
+    background-color: #225454;
+}
+
+
 
 .productImg {
     height: 300px;
@@ -58,21 +122,44 @@ article {
     background: white;
     display: grid;
     grid-template-columns: 1fr 2fr;
+    position: relative;
+    overflow: hidden;
 }
 
 .productImgLarge {
     grid-rows: 1 / span 4;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .modal > .product {
     display: unset;
 } 
 
+.modal > .product > h3 {
+    font-size: 3em;
+    margin: 50px 0;
+}
+
+.modal > .product > h4 {
+    font-size: 2em;
+    margin: 50px 0;
+}
+
 .plantBased {
     display: flex!important;
     flex-direction: row;
     align-items: center;
     justify-content: flex-start;
+    position: absolute;
+    bottom: 0;
+    padding: 10px;
+    background: #8cef7a ;
+    width: 100%;
+}
+
+.plantBased > p {
+    font-weight: 700;
 }
 
 .plantBased > img {
@@ -81,4 +168,16 @@ article {
 
 .hide {
     display: none;
+}
+
+@media all and (max-width: 1400px) {
+    main {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media all and (max-width: 900px) {
+    main {
+        grid-template-columns: 1fr;
+    }
 }
