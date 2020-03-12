@@ -19,7 +19,6 @@
 body {
     background-color: #1b4342;
     background-image: url("img/bg.png");
-    background-size: contain;
     background-repeat: no-repeat;
     background-position: top center;
 }
@@ -186,6 +185,10 @@ button:hover {
 @media all and (max-width: 900px) {
     main {
         grid-template-columns: 1fr;
+    }
+
+    .top {
+        height: auto;
     }
 
 }
